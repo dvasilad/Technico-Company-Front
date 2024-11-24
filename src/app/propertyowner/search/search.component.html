@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Search Property Owner</h2>
+    <form>
+      <div class="form-group">
+        <label for="vatNumber">VAT Number</label>
+        <input type="text" id="vatNumber" class="form-control" placeholder="Enter VAT number" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter email" />
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <div *ngFor="let owner of propertyOwners">
+      <p>{{ owner.name }} {{ owner.surname }}</p>
+      <a [routerLink]="['/update', owner.id]">Update</a>  <!-- Σύνδεσμος για την ενημέρωση -->
+      
+      <button class="delete-button" (click)="confirmDelete(owner.id)">Delete</button><!-- Κουμπί Delete-->
+    </div>
+  </div>
+  

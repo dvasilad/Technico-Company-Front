@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Update Property Owner</h2>
+    <form [formGroup]="propertyOwnerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="vatNumber">VAT Number</label>
+        <input type="text" id="vatNumber" class="form-control" formControlName="vatNumber" placeholder="Enter VAT number" />
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter name" />
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" id="surname" class="form-control" formControlName="surname" placeholder="Enter surname" />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" class="form-control" formControlName="address" placeholder="Enter address" />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" class="form-control" formControlName="phoneNumber" placeholder="Enter phone number" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" placeholder="Enter email" />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" formControlName="username" placeholder="Enter username" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password" placeholder="Enter password" />
+      </div>
+      <div class="form-group">
+        <label for="propertyType">Property Type</label>
+        <select id="propertyType" class="form-control" formControlName="propertyType">
+          <option value="detached">Detached House</option>
+          <option value="maisonette">Maisonette</option>
+          <option value="apartment">Apartment</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <!-- Κουμπί Delete -->
+    <button class="btn btn-danger" (click)="confirmDelete()">Delete</button>
+  </div>
+  
