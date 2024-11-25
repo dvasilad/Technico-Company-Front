@@ -1,13 +1,4 @@
- .delete-button {
-    color: white;
-    background-color: red;
-    border: none;
-  }
-  
-  .delete-button:hover {
-    background-color: darkred;
-  }
-  nav a {
+nav a {
     margin: 0 10px;
     text-decoration: none;
     color: blue;
@@ -21,9 +12,5 @@
   }
 
   nav {
-    background-color: aqua;
-  }
-
-  footer {
     background-color: aqua;
   }

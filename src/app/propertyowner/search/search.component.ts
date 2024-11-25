@@ -15,8 +15,9 @@ export class SearchComponent {
   searchVATNumber: string = '';
   searchEmail: string = '';
 propertyOwners = [
-  { id: 1, name: 'John', surname: 'Doe', email: 'john@example.com' },
-  { id: 2, name: 'Jane', surname: 'Smith', email: 'jane@example.com' }
+  { id: 1, Vat: 123456789, name: 'John', surname: 'Doe', email: 'john@example.com' },
+  { id: 2, Vat: 987654321, name: 'Jane', surname: 'Smith', email: 'jane@example.com' },
+  { id: 3, Vat: 132435465, name: 'Bill', surname: 'Lang', email: 'bill@example.com' }
 ];
 owner: any;
   router: any;
