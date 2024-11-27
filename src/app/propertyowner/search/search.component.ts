@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PropertyOwnerService } from '../../services/property-owner.service';
 
@@ -8,7 +9,7 @@ import { PropertyOwnerService } from '../../services/property-owner.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
   standalone: true ,
-  imports: [RouterModule, CommonModule] 
+  imports: [RouterModule, CommonModule, FormsModule] 
 })
 export class SearchComponent {
 

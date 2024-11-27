@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Search Properties</h2>
+  <form (ngSubmit)="onSearch()">
+    <div class="form-group">
+      <label for="propertyId">Property ID</label>
+      <input
+        type="text"
+        id="propertyId"
+        [(ngModel)]="searchCriteria.propertyId"
+        name="propertyId"
+        class="form-control"
+        placeholder="Enter Property ID"
+      />
+    </div>
+    <div class="form-group">
+      <label for="vatNumber">Owner VAT Number</label>
+      <input
+        type="text"
+        id="vatNumber"
+        [(ngModel)]="searchCriteria.vatNumber"
+        name="vatNumber"
+        class="form-control"
+        placeholder="Enter Owner VAT Number"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <div *ngIf="properties.length > 0">
+    <h3>Search Results</h3>
+    <div *ngFor="let property of properties" class="result-item">
+      <p>
+        {{ property.propertyId }} - {{ property.address }} ({{ property.propertyType }})
+      </p>
+      <a [routerLink]="['/property/updateproperty', property.propertyId]">Update</a>
+      <button class="btn btn-danger" (click)="onDelete(property.propertyId)">Delete</button>
+    </div>
+  </div>
+</div>

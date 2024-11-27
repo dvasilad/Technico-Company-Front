@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PropertyOwnerService } from '../../services/property-owner.service';
 
@@ -9,7 +10,7 @@ import { PropertyOwnerService } from '../../services/property-owner.service';
   standalone: true,
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
-  imports: [ReactiveFormsModule] 
+  imports: [ReactiveFormsModule, CommonModule, FormsModule] 
 })
 export class CreateComponent {
   owner = {

@@ -5,16 +5,17 @@ import { routes } from './app/app.routes';
 import { appConfig } from './app/app.config';
 import { RouterModule } from '@angular/router'; 
 import { importProvidersFrom } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    importProvidersFrom(BrowserModule, RouterModule, ReactiveFormsModule),
-    
+    importProvidersFrom(BrowserModule, RouterModule, ReactiveFormsModule, CommonModule, FormsModule), provideAnimationsAsync(),
   ],
  }) .catch((err) => console.error(err));
 

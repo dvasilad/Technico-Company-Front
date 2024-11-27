@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PropertyOwnerService } from '../../services/property-owner.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { PropertyOwnerService } from '../../services/property-owner.service';
   standalone: true ,
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css'],
-  imports: [ReactiveFormsModule] 
+  imports: [ReactiveFormsModule, CommonModule, FormsModule] 
 })
 export class UpdateComponent implements OnInit {
   propertyOwnerForm: FormGroup = new FormGroup({}); // Αρχικοποίηση της φόρμας
@@ -65,6 +66,8 @@ export class UpdateComponent implements OnInit {
       this.propertyOwnerService.deletePropertyOwner(+this.propertyOwnerId).subscribe(() => {
         alert('Owner deleted successfully.');
         this.router.navigate(['/search']); // Επιστροφή στη λίστα
+      }, error => {
+        alert('Error deleting property owner: ' + error.message);
       });
     }
   }

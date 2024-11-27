@@ -1,6 +1,8 @@
 <nav>
-  <a routerLink="/create" routerLinkActive="active">Create Property Owner</a> |
-  <a routerLink="/search" routerLinkActive="active">Search Property Owner</a>
+  <a [routerLink]="['/propertyowner/create']">Create Property Owner</a> |
+  <a [routerLink]="['/propertyowner/search']">Search Property Owner</a> |
+  <a [routerLink]="['/property/createproperty']">Create Property</a> |
+  <a [routerLink]="['/property/searchproperty']">Search Properties</a>  
 </nav>
 <div class="background">
 <router-outlet></router-outlet> 
