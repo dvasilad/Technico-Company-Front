@@ -25,7 +25,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     // Λήψη του ID του χρήστη από τη διαδρομή
-    this.propertyOwnerId = this.route.snapshot.paramMap.get('id')!;
+    const id = this.route.snapshot.paramMap.get('id')!;
     
     // Δημιουργία της φόρμας
     this.propertyOwnerForm = this.formBuilder.group({
@@ -41,13 +41,20 @@ export class UpdateComponent implements OnInit {
     });
 
     // Φόρτωμα των δεδομένων του χρήστη
-    this.loadPropertyOwner();
+    
+    if (id) {
+      this.loadPropertyOwner(id);}
   }
 
-  loadPropertyOwner(): void {
-    this.propertyOwnerService.getPropertyOwnerById(this.propertyOwnerId).subscribe(data => {
-      this.propertyOwnerForm.patchValue(data);
-    });
+  loadPropertyOwner(id: string): void {
+    this.propertyOwnerService.getPropertyOwnerById(id).subscribe(
+      (propertyOwner) => {
+        this.propertyOwnerForm.patchValue(propertyOwner); // Φορτώνει τα δεδομένα στη φόρμα
+      },
+      (error) => {
+        console.error('Error loading property owner:', error);
+      }
+    );
   }
 
   onSubmit(): void {

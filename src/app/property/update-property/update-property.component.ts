@@ -8,8 +8,8 @@ import { PropertyService } from '../../services/property.service';
   selector: 'app-updateproperty',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
-  templateUrl: './updateproperty.component.html',
-  styleUrl: './updateproperty.component.css'
+  templateUrl: './update-property.component.html',
+  styleUrl: './update-property.component.css'
 })
 export class UpdatepropertyComponent implements OnInit {
   updateForm: FormGroup = new FormGroup({}); 

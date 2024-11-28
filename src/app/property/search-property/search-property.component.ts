@@ -8,8 +8,8 @@ import { PropertyService } from '../../services/property.service';
   selector: 'app-searchproperty',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
-  templateUrl: './searchproperty.component.html',
-  styleUrl: './searchproperty.component.css'
+  templateUrl: './search-property.component.html',
+  styleUrl: './search-property.component.css'
 })
 export class SearchpropertyComponent {
   searchCriteria = { propertyId: '', vatNumber: '' };

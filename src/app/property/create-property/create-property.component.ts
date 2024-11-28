@@ -8,8 +8,8 @@ import { PropertyService } from '../../services/property.service';
   selector: 'app-createproperty',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
-  templateUrl: './createproperty.component.html',
-  styleUrl: './createproperty.component.css'
+  templateUrl: './create-property.component.html',
+  styleUrl: './create-property.component.css'
 })
 export class CreatepropertyComponent {
   createForm: FormGroup;

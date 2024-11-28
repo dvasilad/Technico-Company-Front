@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Search Property Repairs</h2>
+    <form (ngSubmit)="onSearch()">
+      <div class="form-group">
+        <label for="dateRange">Date or Date Range</label>
+        <input
+          type="text"
+          id="dateRange"
+          [(ngModel)]="searchCriteria.dateRange"
+          name="dateRange"
+          class="form-control"
+          placeholder="Enter a date or date range"
+        />
+      </div>
+      <div class="form-group">
+        <label for="ownerId">Owner ID</label>
+        <input
+          type="text"
+          id="ownerId"
+          [(ngModel)]="searchCriteria.ownerId"
+          name="ownerId"
+          class="form-control"
+          placeholder="Enter Owner ID"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  
+    <div *ngIf="repairs.length > 0">
+      <h3>Search Results</h3>
+      <div *ngFor="let repair of repairs" class="result-item">
+        <p>
+          Repair ID: {{ repair.id }} - Status: {{ repair.status }} - Cost: {{ repair.cost }}
+        </p>
+        <a [routerLink]="['/propertyrepair/update', repair.id]">Update</a>
+        <button class="btn btn-danger" (click)="onDelete(repair.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  

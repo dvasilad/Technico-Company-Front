@@ -32,7 +32,7 @@
       <p>
         {{ property.propertyId }} - {{ property.address }} ({{ property.propertyType }})
       </p>
-      <a [routerLink]="['/property/updateproperty', property.propertyId]">Update</a>
+      <a [routerLink]="['/property/update-property', property.propertyId]">Update</a>
       <button class="btn btn-danger" (click)="onDelete(property.propertyId)">Delete</button>
     </div>
   </div>
