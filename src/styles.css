@@ -23,23 +23,6 @@ h2 {
     background-color: red;
     border: none;
   }
-  
-  nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  nav a.active {
-    color: darkblue;
-    text-decoration: underline;
-  }
-
-  nav {
-    background-color: aqua;
-  }
 
   footer {
     background-color: aqua;
