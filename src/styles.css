@@ -24,9 +24,6 @@ h2 {
     border: none;
   }
 
-  footer {
-    background-color: aqua;
-  }
   .background {
     background-image: url('/assets/images/technicobackround.png');
     background-size: cover;
