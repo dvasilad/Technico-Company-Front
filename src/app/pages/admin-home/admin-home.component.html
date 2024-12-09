@@ -1,0 +1,20 @@
+<h1>Admin Dashboard</h1>
+
+<section>
+  <h2>Active Repairs for {{ today }}</h2>
+  <ul *ngIf="activeRepairs.length > 0; else noRepairs">
+    <li *ngFor="let repair of activeRepairs">
+      {{ repair.title }} - {{ repair.time }}
+    </li>
+  </ul>
+  <ng-template #noRepairs>
+    <p>No active repairs for today.</p>
+  </ng-template>
+</section>
+
+<section class="navigation-links">
+  <h2>Navigation</h2>
+  <a routerLink="/propertyowner/search">Property Owners</a>
+  <a routerLink="/propertyrepair/search-repair">Repairs</a>
+</section>
+

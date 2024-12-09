@@ -8,11 +8,19 @@ import { UpdatepropertyComponent } from './property/update-property/update-prope
 import { CreaterepairComponent } from './propertyrepair/createrepair/create-repair.component';
 import { SearchrepairComponent } from './propertyrepair/searchrepair/search-repair.component';
 import { UpdaterepairComponent } from './propertyrepair/updaterepair/update-repair.component';
+import { NotFound404Component } from './pages/not-found-404/not-found-404.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+import { UserHomeComponent } from './pages/user-home/user-home.component';
+import { LoginComponent } from './pages/login/login.component';
+
 
 
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/create', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin-home',  component: AdminHomeComponent  },
+  { path: 'user-home', component: UserHomeComponent },
   { path: 'propertyowner/create', component: CreateComponent },
   { path: 'propertyowner/search', component: SearchComponent },
   { path: 'propertyowner/update/:id', component: UpdateComponent },
@@ -21,6 +29,7 @@ export const routes: Routes = [
   { path: 'property/update-property/:propertyid', component: UpdatepropertyComponent },
   { path: 'propertyrepair/create-repair', component: CreaterepairComponent },
   { path: 'propertyrepair/search-repair', component: SearchrepairComponent },
-  { path: 'propertyrepair/update/:repairid', component: UpdaterepairComponent }
+  { path: 'propertyrepair/update/:repairid', component: UpdaterepairComponent },
+  { path: "**", component: NotFound404Component}
 ];
 

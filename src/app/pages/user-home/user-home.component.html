@@ -1,0 +1,10 @@
+<h1>User Dashboard</h1>
+
+<h2>Your Repairs</h2>
+<ul>
+  <li *ngFor="let repair of userRepairs">
+    <strong>{{ repair.title }}</strong> - {{ repair.status }} <br />
+    Date: {{ repair.date }} at {{ repair.time }}
+  </li>
+</ul>
+

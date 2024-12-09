@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PropertyOwnerService } from '../../services/property-owner.service';
 
@@ -12,20 +12,29 @@ import { PropertyOwnerService } from '../../services/property-owner.service';
   styleUrls: ['./create.component.css'],
   imports: [ReactiveFormsModule, CommonModule, FormsModule] 
 })
-export class CreateComponent {
-  owner = {
-    vatNumber: '',
-    name: '',
-    surname: '',
-    address: '',
-    phoneNumber: '',
-    email: '',
-    username: '',
-    password: '',
-    propertyType: 'detached' // Default value
-  };
+export class CreateComponent implements OnInit {
 
-  constructor(private ownerService: PropertyOwnerService, private router: Router) {}
+  fb: any;
+  createForm: FormGroup = new FormGroup({}); 
+  owner: any;
+
+  constructor(
+    private ownerService: PropertyOwnerService, 
+    private router: Router) {}
+    
+  ngOnInit(): void {
+    this.createForm = this.fb.group({
+      vatNumber: [''],
+      name: [''],
+      surname: [''],
+      address: [''],
+      phoneNumber: [''],
+      email: [''],
+      username: [''],
+      password: [''],
+      propertyType: ['']
+    });
+  }
 
   createOwner(): void {
     this.ownerService.createOwner(this.owner).subscribe(
@@ -39,4 +48,5 @@ export class CreateComponent {
       }
     );
   }
+  
 }

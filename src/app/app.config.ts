@@ -1,7 +1,7 @@
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +11,7 @@ export const appConfig =  {
     provideRouter(routes),
     provideHttpClient(),
     importProvidersFrom(BrowserModule),
-    CommonModule
+    CommonModule,
+    provideZoneChangeDetection({ eventCoalescing: true })
   ],
 };

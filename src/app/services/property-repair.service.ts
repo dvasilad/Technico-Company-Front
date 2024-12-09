@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Repair } from '../shared/model/repair';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class PropertyrepairService {
     return this.http.get<any[]>(`${this.baseUrl}`, { params: criteria });
   }
 
+  getAllRepairs(){
+    let url = "http://localhost:8080/api/repairs";
+    return this.http.get<Repair[]>(url);
+  }
   getRepairById(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
